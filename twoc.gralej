@@ -1,0 +1,66 @@
+%Di SUN, sundi4, 1002402759
+<'the student appeared to sleep'
+{ :'s:the student appeared to sleep'
+    s(
+        mood: indicative(
+            tense: tense),
+        vsem: 'mgsat(v_sem)')
+    { :'np_det_n:the student'
+        np(
+            nsem: $2 = student)
+        { :'lexicon:the'
+            det
+        }
+        { :'lexicon:student'
+            n(
+                nsem: $2)
+        }
+    }
+    { :'vp_inf_apr:appeared to sleep'
+        vp(
+            mood: indicative(
+                tense: tense),
+            vsem: v_sem(
+                subcat: [$0 = np(
+                    nsem: $2)],
+                vtense: $6 = past))
+        { :'lexicon:appeared'
+            v(
+                vsem: appear(
+                    subcat: [$5 = inf_clause(
+                        mood: infinitive,
+                        vsem: v_sem(
+                            subcat: [$0],
+                            vtense: present))],
+                    theme_apr: $5,
+                    vtense: $6))
+        }
+        { :'v_inf_clause:to sleep'
+            inf_clause(
+                mood: infinitive,
+                vsem: v_sem(
+                    subcat: [$0],
+                    vtense: present))
+            { :'lexicon:to'
+                toinf
+            }
+            { :'vp_v:sleep'
+                vp(
+                    mood: indicative(
+                        tense: tense),
+                    vsem: v_sem(
+                        subcat: [$0],
+                        vtense: $10 = present))
+                { :'lexicon:sleep'
+                    v(
+                        vsem: sleep(
+                            experiencer: $0,
+                            subcat: [$0],
+                            vtense: $10))
+                }
+            }
+        }
+    }
+}
+>
+
